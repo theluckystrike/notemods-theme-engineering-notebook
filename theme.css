@@ -1,0 +1,471 @@
+/* ==========================================================================
+   Engineering Notebook — an Obsidian app theme
+   Design system: blueprint + copper.
+   Light mode is pale blueprint paper with a faint graph-paper grid; dark mode is
+   deep navy with the same grid. Uppercase ruled headings, copper accent, full
+   grid tables, 2px radii. Tabular numerals for measurements.
+   Original CSS by U3 Theme Factory. MIT licensed. No remote assets.
+   Requires core variables introduced through Obsidian 1.1 (callout variables).
+   ========================================================================== */
+
+/* ---------- shared tokens (both modes) ---------------------------------- */
+body {
+  --eng-radius: 2px;
+  --eng-rule-w: 1px;
+  --eng-grid-size: 24px;
+
+  --font-text-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-monospace-theme: ui-monospace, SFMono-Regular, "SF Mono", Menlo,
+    Consolas, "Liberation Mono", monospace;
+
+  --font-text-size: 16px;
+  --font-monospace-size: 13.5px;
+  --line-height-normal: 1.62;
+  --line-height-tight: 1.3;
+
+  --h1-size: 1.75em;
+  --h2-size: 1.42em;
+  --h3-size: 1.2em;
+  --h4-size: 1.05em;
+  --h5-size: 0.95em;
+  --h6-size: 0.88em;
+  --h1-weight: 700;
+  --h2-weight: 700;
+  --h3-weight: 700;
+  --h4-weight: 700;
+  --h5-weight: 700;
+  --h6-weight: 700;
+
+  --bold-weight: 700;
+  --tag-size: 0.78em;
+  --checkbox-size: 1.02em;
+  --checkbox-radius: 2px;
+  --radius-s: 2px;
+  --radius-m: var(--eng-radius);
+  --radius-l: 4px;
+
+  --code-size: var(--font-monospace-size);
+  --code-line-height: 1.55;
+  --table-header-weight: 700;
+  --table-text-size: 0.92em;
+  --font-variant-numeric: tabular-nums;
+
+  --link-decoration: none;
+  --link-decoration-hover: underline;
+  --link-decoration-thickness: 1px;
+  --link-unresolved-opacity: 0.55;
+  --link-unresolved-decoration-style: dashed;
+
+  --input-hover-border-color: var(--eng-accent);
+  --input-focus-border-color: var(--eng-accent);
+}
+
+/* ---------- dark mode (deep navy blueprint) ---------------------------- */
+.theme-dark {
+  --eng-bg: #0c1a2b;
+  --eng-bg-2: #08131f;
+  --eng-bg-3: #102336;
+  --eng-ink: #d6e2ee;
+  --eng-ink-muted: #94a9bf;
+  --eng-ink-faint: #647c94;
+  --eng-rule: #1d3350;
+  --eng-rule-strong: #2a4a6e;
+  --eng-accent: #d98a4e;
+  --eng-accent-strong: #e0975c;
+  --eng-link: #7fb2e6;
+  --eng-link-hover: #a9cdf2;
+  --eng-grid: rgba(127, 178, 230, 0.07);
+  --eng-code-bg: #071525;
+  --eng-selection: #1c3a5c;
+  --eng-highlight: rgba(217, 138, 78, 0.30);
+
+  --background-primary: var(--eng-bg);
+  --background-primary-alt: var(--eng-bg-3);
+  --background-secondary: var(--eng-bg-2);
+  --background-secondary-alt: var(--eng-bg-3);
+  --background-modifier-border: var(--eng-rule);
+  --background-modifier-border-hover: var(--eng-rule-strong);
+  --background-modifier-border-focus: var(--eng-accent);
+  --background-modifier-hover: rgba(127, 178, 230, 0.07);
+  --background-modifier-active-hover: rgba(127, 178, 230, 0.12);
+  --background-modifier-form-field: var(--eng-bg-2);
+  --background-modifier-cover: rgba(5, 10, 17, 0.88);
+
+  --text-normal: var(--eng-ink);
+  --text-muted: var(--eng-ink-muted);
+  --text-faint: var(--eng-ink-faint);
+  --text-on-accent: #1a1006;
+  --text-accent: var(--eng-accent-strong);
+  --text-accent-hover: var(--eng-link-hover);
+  --text-selection: var(--eng-selection);
+  --text-highlight-bg: var(--eng-highlight);
+
+  --interactive-normal: #102336;
+  --interactive-hover: #163049;
+  --interactive-accent: var(--eng-accent);
+  --interactive-accent-hover: var(--eng-accent-strong);
+
+  --link-color: var(--eng-link);
+  --link-color-hover: var(--eng-link-hover);
+  --link-external-color: var(--eng-link);
+  --link-external-color-hover: var(--eng-link-hover);
+  --link-unresolved-color: var(--eng-ink-faint);
+
+  --tag-color: var(--eng-accent-strong);
+  --tag-background: rgba(217, 138, 78, 0.14);
+  --tag-background-hover: rgba(217, 138, 78, 0.22);
+  --tag-color-hover: var(--eng-accent-strong);
+
+  --code-background: var(--eng-code-bg);
+  --code-normal: var(--eng-ink);
+  --code-comment: #6a86a3;
+  --code-function: #7fb2e6;
+  --code-important: #e0975c;
+  --code-keyword: #c792ea;
+  --code-operator: #79c0ff;
+  --code-property: #7fb2e6;
+  --code-punctuation: #6a86a3;
+  --code-string: #9ed18a;
+  --code-tag: #e0975c;
+  --code-value: #d2a8ff;
+
+  --table-border-color: var(--eng-rule-strong);
+  --table-header-background: rgba(127, 178, 230, 0.09);
+  --table-header-background-hover: rgba(127, 178, 230, 0.13);
+  --table-row-background-hover: rgba(127, 178, 230, 0.05);
+  --table-selection: var(--eng-selection);
+  --table-selection-border-color: var(--eng-accent);
+
+  --checkbox-border-color: #33557b;
+  --checkbox-border-color-hover: var(--eng-accent);
+  --checkbox-color: var(--eng-accent);
+  --checkbox-color-hover: var(--eng-accent-strong);
+  --checkbox-marker-color: #1a1006;
+  --checklist-done-color: var(--eng-ink-faint);
+
+  --nav-item-color: var(--eng-ink-muted);
+  --nav-item-color-hover: var(--eng-ink);
+  --nav-item-color-active: var(--eng-ink);
+  --nav-item-background-hover: rgba(127, 178, 230, 0.07);
+  --nav-item-background-active: rgba(217, 138, 78, 0.16);
+  --nav-item-color-selected: var(--eng-accent-strong);
+  --nav-indentation-guide-color: #16304a;
+
+  --tab-text-color: var(--eng-ink-muted);
+  --tab-text-color-focused: var(--eng-ink);
+  --tab-text-color-focused-active: var(--eng-ink);
+  --tab-background-active: var(--eng-bg);
+  --tab-outline-color: var(--eng-rule);
+
+  --ribbon-background: var(--eng-bg-2);
+  --titlebar-background: var(--eng-bg-2);
+  --titlebar-background-focused: var(--eng-bg-2);
+  --status-bar-background: var(--eng-bg-2);
+  --status-bar-text-color: var(--eng-ink-muted);
+  --divider-color: var(--eng-rule);
+  --scrollbar-thumb-bg: #1d3350;
+  --scrollbar-active-thumb-bg: #2a4a6e;
+  --modal-background: var(--eng-bg-3);
+  --modal-border-color: var(--eng-rule);
+}
+
+/* ---------- light mode (pale blueprint paper) -------------------------- */
+.theme-light {
+  --eng-bg: #eef3f8;
+  --eng-bg-2: #e2eaf2;
+  --eng-bg-3: #e8eff5;
+  --eng-ink: #16283c;
+  --eng-ink-muted: #4a5f76;
+  --eng-ink-faint: #7488a0;
+  --eng-rule: #c6d4e2;
+  --eng-rule-strong: #a9bcd0;
+  --eng-accent: #9a5a22;
+  --eng-accent-strong: #7f4a1b;
+  --eng-link: #1c5fa8;
+  --eng-link-hover: #124b8a;
+  --eng-grid: rgba(28, 95, 168, 0.08);
+  --eng-code-bg: #e6eef6;
+  --eng-selection: #c6dcf3;
+  --eng-highlight: rgba(217, 138, 78, 0.32);
+
+  --background-primary: var(--eng-bg);
+  --background-primary-alt: var(--eng-bg-3);
+  --background-secondary: var(--eng-bg-2);
+  --background-secondary-alt: var(--eng-bg-3);
+  --background-modifier-border: var(--eng-rule);
+  --background-modifier-border-hover: var(--eng-rule-strong);
+  --background-modifier-border-focus: var(--eng-accent);
+  --background-modifier-hover: rgba(22, 40, 60, 0.05);
+  --background-modifier-active-hover: rgba(22, 40, 60, 0.09);
+  --background-modifier-form-field: #ffffff;
+  --background-modifier-cover: rgba(40, 55, 75, 0.5);
+
+  --text-normal: var(--eng-ink);
+  --text-muted: var(--eng-ink-muted);
+  --text-faint: var(--eng-ink-faint);
+  --text-on-accent: #ffffff;
+  --text-accent: var(--eng-accent-strong);
+  --text-accent-hover: #6a3d14;
+  --text-selection: var(--eng-selection);
+  --text-highlight-bg: var(--eng-highlight);
+
+  --interactive-normal: #e3ebf3;
+  --interactive-hover: #d8e3ee;
+  --interactive-accent: #9a5a22;
+  --interactive-accent-hover: #7f4a1b;
+
+  --link-color: var(--eng-link);
+  --link-color-hover: var(--eng-link-hover);
+  --link-external-color: var(--eng-link);
+  --link-external-color-hover: var(--eng-link-hover);
+  --link-unresolved-color: var(--eng-ink-faint);
+
+  --tag-color: var(--eng-accent-strong);
+  --tag-background: rgba(154, 90, 34, 0.12);
+  --tag-background-hover: rgba(154, 90, 34, 0.20);
+  --tag-color-hover: var(--eng-accent-strong);
+
+  --code-background: var(--eng-code-bg);
+  --code-normal: var(--eng-ink);
+  --code-comment: #5f7488;
+  --code-function: #1c5fa8;
+  --code-important: #b42318;
+  --code-keyword: #8250df;
+  --code-operator: #0550ae;
+  --code-property: #1c5fa8;
+  --code-punctuation: #5f7488;
+  --code-string: #0f6b30;
+  --code-tag: #953800;
+  --code-value: #8250df;
+
+  --table-border-color: var(--eng-rule-strong);
+  --table-header-background: rgba(28, 95, 168, 0.09);
+  --table-header-background-hover: rgba(28, 95, 168, 0.13);
+  --table-row-background-hover: rgba(22, 40, 60, 0.04);
+  --table-selection: var(--eng-selection);
+  --table-selection-border-color: var(--eng-accent);
+
+  --checkbox-border-color: #a6b8ca;
+  --checkbox-border-color-hover: var(--eng-accent);
+  --checkbox-color: var(--eng-accent);
+  --checkbox-color-hover: var(--eng-accent-strong);
+  --checkbox-marker-color: #ffffff;
+  --checklist-done-color: var(--eng-ink-faint);
+
+  --nav-item-color: var(--eng-ink-muted);
+  --nav-item-color-hover: var(--eng-ink);
+  --nav-item-color-active: var(--eng-ink);
+  --nav-item-background-hover: rgba(22, 40, 60, 0.05);
+  --nav-item-background-active: rgba(154, 90, 34, 0.14);
+  --nav-item-color-selected: var(--eng-accent-strong);
+  --nav-indentation-guide-color: #cfdbe8;
+
+  --tab-text-color: var(--eng-ink-muted);
+  --tab-text-color-focused: var(--eng-ink);
+  --tab-text-color-focused-active: var(--eng-ink);
+  --tab-background-active: var(--eng-bg);
+  --tab-outline-color: var(--eng-rule);
+
+  --ribbon-background: var(--eng-bg-2);
+  --titlebar-background: var(--eng-bg-2);
+  --titlebar-background-focused: var(--eng-bg-2);
+  --status-bar-background: var(--eng-bg-2);
+  --status-bar-text-color: var(--eng-ink-muted);
+  --divider-color: var(--eng-rule);
+  --scrollbar-thumb-bg: #c6d4e2;
+  --scrollbar-active-thumb-bg: #a9bcd0;
+  --modal-background: #ffffff;
+  --modal-border-color: var(--eng-rule);
+}
+
+/* ---------- blueprint grid on reading and editing surfaces ------------- */
+.markdown-preview-view,
+.markdown-reading-view {
+  background-image: linear-gradient(var(--eng-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--eng-grid) 1px, transparent 1px);
+  background-size: var(--eng-grid-size) var(--eng-grid-size);
+  background-position: -1px -1px;
+}
+.markdown-source-view.mod-cm6 .cm-scroller {
+  background-image: linear-gradient(var(--eng-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--eng-grid) 1px, transparent 1px);
+  background-size: var(--eng-grid-size) var(--eng-grid-size);
+  background-position: -1px -1px;
+}
+
+/* ---------- headings: ruled sheet titles ------------------------------- */
+.markdown-rendered h1,
+.markdown-preview-view h1,
+.cm-line.HyperMD-header-1 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--eng-accent);
+  padding-bottom: 0.18em;
+}
+.markdown-rendered h2,
+.markdown-preview-view h2,
+.cm-line.HyperMD-header-2 {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--eng-rule-strong);
+  padding-bottom: 0.16em;
+}
+.markdown-rendered h3,
+.markdown-preview-view h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--eng-accent-strong);
+}
+.markdown-rendered h4,
+.markdown-preview-view h4,
+.markdown-rendered h5,
+.markdown-preview-view h5,
+.markdown-rendered h6,
+.markdown-preview-view h6 { color: var(--eng-ink-muted); }
+
+/* ---------- links ------------------------------------------------------- */
+.markdown-rendered a.internal-link:hover,
+.markdown-preview-view a.internal-link:hover,
+.markdown-rendered a.external-link:hover,
+.markdown-preview-view a.external-link:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- lists ------------------------------------------------------- */
+.markdown-rendered ul,
+.markdown-preview-view ul { padding-inline-start: 1.45em; }
+.markdown-rendered ol,
+.markdown-preview-view ol { padding-inline-start: 1.65em; }
+.markdown-rendered li::marker,
+.markdown-preview-view li::marker { color: var(--eng-accent); font-variant-numeric: tabular-nums; }
+.markdown-rendered li,
+.markdown-preview-view li { margin-block: 0.1em; }
+
+/* ---------- tasks ------------------------------------------------------- */
+.markdown-rendered .task-list-item,
+.markdown-preview-view .task-list-item { list-style: none; }
+.markdown-rendered input[type="checkbox"],
+.markdown-preview-view input[type="checkbox"],
+.markdown-source-view input[type="checkbox"] { border-radius: 2px; border-width: 1.5px; }
+.markdown-rendered .task-list-item.is-checked,
+.markdown-preview-view .task-list-item.is-checked { color: var(--checklist-done-color); text-decoration: line-through; }
+
+/* ---------- blockquote: spec callout ----------------------------------- */
+.markdown-rendered blockquote,
+.markdown-preview-view blockquote {
+  border-left: 3px solid var(--eng-accent);
+  border-radius: 0;
+  background: var(--eng-bg-3);
+  padding: 0.4em 0.9em;
+  color: var(--text-muted);
+}
+
+/* ---------- callouts: stamped spec blocks ------------------------------ */
+.callout {
+  --callout-radius: 2px;
+  --callout-border-width: 1px;
+  --callout-border-opacity: 1;
+  --callout-padding: 0.7em 1em;
+  --callout-title-size: 0.85em;
+  --callout-title-weight: 700;
+  --callout-content-padding: 0 0 0.05em 0;
+  --callout-blend-mode: normal;
+}
+.callout .callout-title { text-transform: uppercase; letter-spacing: 0.05em; }
+.callout[data-callout="note"],
+.callout[data-callout="info"],
+.callout[data-callout="todo"] { --callout-color: 127, 178, 230; }
+.callout[data-callout="abstract"],
+.callout[data-callout="summary"],
+.callout[data-callout="tldr"] { --callout-color: 154, 90, 34; }
+.callout[data-callout="tip"],
+.callout[data-callout="hint"],
+.callout[data-callout="success"],
+.callout[data-callout="check"],
+.callout[data-callout="done"] { --callout-color: 63, 145, 91; }
+.callout[data-callout="question"],
+.callout[data-callout="help"],
+.callout[data-callout="faq"] { --callout-color: 130, 80, 223; }
+.callout[data-callout="warning"],
+.callout[data-callout="caution"],
+.callout[data-callout="attention"] { --callout-color: 176, 122, 31; }
+.callout[data-callout="failure"],
+.callout[data-callout="fail"],
+.callout[data-callout="missing"],
+.callout[data-callout="danger"],
+.callout[data-callout="error"],
+.callout[data-callout="bug"] { --callout-color: 190, 62, 54; }
+.callout[data-callout="example"] { --callout-color: 74, 95, 118; }
+.callout[data-callout="quote"],
+.callout[data-callout="cite"] { --callout-color: 116, 136, 160; }
+
+/* ---------- tables: full blueprint grid -------------------------------- */
+.markdown-rendered table,
+.markdown-preview-view table {
+  border-collapse: collapse;
+  border: 1px solid var(--eng-rule-strong);
+  font-size: var(--table-text-size);
+  font-variant-numeric: tabular-nums;
+}
+.markdown-rendered th,
+.markdown-preview-view th { border: 1px solid var(--eng-rule-strong); text-align: left; }
+.markdown-rendered td,
+.markdown-preview-view td { border: 1px solid var(--eng-rule-strong); }
+
+/* ---------- inline & fenced code --------------------------------------- */
+.markdown-rendered code,
+.markdown-preview-view code,
+.cm-inline-code {
+  background: var(--eng-code-bg);
+  border: 1px solid var(--eng-rule);
+  border-radius: 2px;
+  padding: 0.08em 0.35em;
+  font-size: 0.88em;
+}
+.markdown-rendered pre,
+.markdown-preview-view pre {
+  background: var(--eng-code-bg);
+  border: 1px solid var(--eng-rule-strong);
+  border-radius: 2px;
+  padding: 0.9em 1em;
+  line-height: var(--code-line-height);
+}
+.markdown-rendered pre code,
+.markdown-preview-view pre code { border: none; background: transparent; padding: 0; }
+.markdown-source-view.mod-cm6 .HyperMD-codeblock-bg { background: var(--eng-code-bg); }
+
+/* ---------- horizontal rule -------------------------------------------- */
+.markdown-rendered hr,
+.markdown-preview-view hr { border: none; border-top: 1px solid var(--eng-rule-strong); height: 0; }
+
+/* ---------- tags ------------------------------------------------------- */
+.markdown-rendered a.tag,
+.markdown-preview-view .tag,
+.cm-hashtag { border-radius: 2px; padding: 0.05em 0.5em; border: 1px solid var(--eng-rule-strong); }
+
+/* ---------- search ----------------------------------------------------- */
+.search-result-file-matched-text { background: var(--eng-highlight); color: var(--text-normal); }
+.search-input-container input { border-radius: 2px; }
+
+/* ---------- settings --------------------------------------------------- */
+.vertical-tab-nav-item.is-active { background: var(--interactive-accent); color: var(--text-on-accent); }
+.setting-item { border-top: 1px solid var(--background-modifier-border); }
+.setting-item-name { font-weight: 700; }
+
+/* ---------- tabs ------------------------------------------------------- */
+.workspace-tab-header.is-active { box-shadow: inset 0 -2px 0 var(--eng-accent); }
+
+/* ---------- navigation ------------------------------------------------- */
+.nav-file-title,
+.nav-folder-title { border-radius: 2px; }
+.nav-file-title.is-active { font-weight: 700; }
+
+/* ---------- focus ------------------------------------------------------ */
+:focus-visible { outline: 2px solid var(--eng-accent); outline-offset: 2px; }
+input:focus, textarea:focus, select:focus { border-color: var(--eng-accent); box-shadow: 0 0 0 2px var(--eng-highlight); }
+
+/* ---------- reduced motion --------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+}

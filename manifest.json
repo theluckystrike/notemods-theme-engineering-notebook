@@ -1,7 +1,6 @@
 {
   "name": "Engineering Notebook",
   "author": "U3 Theme Factory",
-  "version": "1.0.0",
-  "minAppVersion": "1.1.0",
-  "description": "A blueprint-and-copper theme with graph-paper surfaces, ruled uppercase headings, and grid tables for engineering notes."
+  "version": "1.0.1",
+  "minAppVersion": "1.1.0"
 }

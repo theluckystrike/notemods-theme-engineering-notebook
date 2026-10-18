@@ -1,0 +1,18 @@
+{
+  "slug": "engineering-notebook",
+  "family": "technical",
+  "useCase": "Specifications, measurements, and design records",
+  "distinctFeatures": [
+    "Faint blueprint graph paper with copper ruled titles",
+    "Square stamped callouts and full table grids",
+    "Tabular numerals and nested list guide rules",
+    "Copper focus rings with a paper-colored gap"
+  ],
+  "modes": ["light", "dark"],
+  "fonts": {"text": "system sans", "interface": "system sans", "monospace": "system monospace"},
+  "contrastTokens": {
+    "normalText": "--text-normal on --background-primary",
+    "link": "--link-color on --background-primary",
+    "uiFocus": "--eng-accent-strong on --eng-bg"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "slug": "engineering-notebook",
+  "version": "1.0.2",
+  "producer": "T1",
+  "independentAcceptance": "unknown",
+  "createdAt": "2026-10-18T02:05:39.188909+00:00",
+  "hashes": {
+    "theme.css": "6724068a9161004967c048769256c26c6a4f892bab8097201d1ca0e08b1efad1",
+    "manifest.json": "215b498a777065868617ae21534deffdb77367b4fc7ae5f249dce9c430bbf8f0",
+    "README.md": "92a5eef521f8ae6093944e28c2bfacc9f7cd32a4ee53002e5f5f8cff1305983f",
+    "LICENSE": "486636d97d793c8f648e4138e9fcd0841eae2561ba26786bd6d725e3624521ab",
+    "theme.json": "78912b8ce8b0790060ea25e062d919879da140b8f502f1dddf087e1f83a3e108",
+    "quality.json": "ae6e81da09d7f3c08375496452076c6758a866655569b931b7f48ff63840346d"
+  },
+  "images": {
+    "dark-main-420-preview.jpg": "9ef7a97914e40a46bfba6e9272df8cac9046c82998adb11bfc3bfd73fe93517f",
+    "light-preview-callouts-one.jpg": "3a5af4ee8b361e11aed24469157b172cf182161823d0962fe554aeedc4305f78",
+    "dark-main-1280-preview.jpg": "5514b53934b5c0537b279d980e7e8fbe6ecee5c2d36ff954ac48dea03cdb609d",
+    "light-main-1280-preview.jpg": "69a59809f34c87d048cbe6e07cebdd985f0ce60b4d265261a414fbd9aa1119b7"
+  },
+  "captures": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+  "commands": [
+    {
+      "command": "timeout 120 python3 units/T1/static-check.py engineering-notebook",
+      "exitCode": 0,
+      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/code-gate.json"
+    },
+    {
+      "command": "timeout 60 python3 units/T1/package-check.py engineering-notebook",
+      "exitCode": 0,
+      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/package-gate.json"
+    },
+    {
+      "command": "timeout 900 node units/T1/harness/run.mjs --theme /Users/mike/notemods-theme-submissions-20261014/repos/notemods-theme-engineering-notebook --out /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+      "exitCode": 0,
+      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release/evidence.json"
+    },
+    {
+      "command": "timeout 30 python3 units/T1/assess-evidence.py engineering-notebook /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+      "exitCode": 0,
+      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/computed-evidence-summary.json"
+    }
+  ],
+  "computedContrast": {
+    "light": {
+      "body": {
+        "minimum": 5.673429346238581,
+        "samples": 21
+      },
+      "muted": {
+        "minimum": 5.897544994213619,
+        "samples": 22
+      },
+      "links": {
+        "minimum": 5.785031911940014,
+        "samples": 5
+      },
+      "dividers": {
+        "minimum": 4.26665430244815,
+        "samples": 4
+      },
+      "tableBorders": {
+        "minimum": 3.770438855319247,
+        "samples": 4
+      },
+      "calloutText": {
+        "minimum": 12.899373713054969,
+        "samples": 50
+      },
+      "nativeTab": {
+        "presses": 44,
+        "distinctElements": 26,
+        "indicatorsPresent": 44
+      },
+      "focusCoverage": {
+        "focusedControls": 39,
+        "minimum": 4.478488961088457,
+        "states": [
+          "reading",
+          "search",
+          "explorer",
+          "palette",
+          "settings"
+        ]
+      },
+      "selectedSettingsText": {
+        "minimum": 5.44102158642852,
+        "samples": 1
+      },
+      "themeSelection": {
+        "control": {
+          "value": "Engineering Notebook",
+          "options": [
+            {
+              "text": "Default",
+              "value": ""
+            },
+            {
+              "text": "Engineering Notebook",
+              "value": "Engineering Notebook"
+            }
+          ]
+        },
+        "default": {
+          "controlValue": "Engineering Notebook",
+          "selectedTheme": "Engineering Notebook"
+        },
+        "theme": {
+          "controlValue": "Engineering Notebook",
+          "selectedTheme": "Engineering Notebook"
+        },
+        "nativeChanged": false,
+        "handler": {
+          "method": "Set the visible select value and dispatch its change event. This tests the Settings UI handler, not native option selection.",
+          "default": {
+            "controlValue": "",
+            "selectedTheme": ""
+          },
+          "theme": {
+            "controlValue": "Engineering Notebook",
+            "selectedTheme": "Engineering Notebook"
+          }
+        }
+      }
+    },
+    "dark": {
+      "body": {
+        "minimum": 6.602264445069483,
+        "samples": 21
+      },
+      "muted": {
+        "minimum": 7.249331073310864,
+        "samples": 22
+      },
+      "links": {
+        "minimum": 7.855630622818158,
+        "samples": 5
+      },
+      "dividers": {
+        "minimum": 4.955888658329949,
+        "samples": 4
+      },
+      "tableBorders": {
+        "minimum": 4.248199284374335,
+        "samples": 4
+      },
+      "calloutText": {
+        "minimum": 12.139715594062585,
+        "samples": 50
+      },
+      "nativeTab": {
+        "presses": 44,
+        "distinctElements": 26,
+        "indicatorsPresent": 44
+      },
+      "focusCoverage": {
+        "focusedControls": 39,
+        "minimum": 5.8491074343690315,
+        "states": [
+          "reading",
+          "search",
+          "explorer",
+          "palette",
+          "settings"
+        ]
+      },
+      "selectedSettingsText": {
+        "minimum": 6.867102471710059,
+        "samples": 1
+      },
+      "themeSelection": {
+        "control": {
+          "value": "Engineering Notebook",
+          "options": [
+            {
+              "text": "Default",
+              "value": ""
+            },
+            {
+              "text": "Engineering Notebook",
+              "value": "Engineering Notebook"
+            }
+          ]
+        },
+        "default": {
+          "controlValue": "Engineering Notebook",
+          "selectedTheme": "Engineering Notebook"
+        },
+        "theme": {
+          "controlValue": "Engineering Notebook",
+          "selectedTheme": "Engineering Notebook"
+        },
+        "nativeChanged": false,
+        "handler": {
+          "method": "Set the visible select value and dispatch its change event. This tests the Settings UI handler, not native option selection.",
+          "default": {
+            "controlValue": "",
+            "selectedTheme": ""
+          },
+          "theme": {
+            "controlValue": "Engineering Notebook",
+            "selectedTheme": "Engineering Notebook"
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "Startup before CDP attach is unknown.",
+    "Programmatic focus does not prove keyboard reachability.",
+    "Gradients and background image pixels are not sampled.",
+    "Mobile and assistive technology are not tested."
+  ]
+}

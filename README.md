@@ -1,88 +1,93 @@
 # Engineering Notebook
 
-Graph paper surfaces for your measurements, specifications, and design notes.
-
-This is a preview theme with light and dark modes.
-
-## Preview status
-
-An independent review scored source version 1.0.0 77/100 on 14 October 2026.
-The NoteMods acceptance gate requires at least 95/100. This version remains on hold.
-Obsidian directory approval is not claimed.
-
-## Design
-
-- Blueprint colour palette.
-- Copper heading rules.
-- Tables with full grids.
-
-These styles change presentation. They do not add application features or plugins.
+Engineering Notebook gives specifications, measurements, and design records a blueprint page.
+Copper rules mark the headings. Square controls and full table grids keep the layout precise.
+The graph lines are faint decoration. They do not carry information.
 
 ## Screenshots
 
-These are unaltered captures from Obsidian 1.14.4 with a test note.
-They show Live Preview and Reading view side by side.
+The captures show the installed theme in the Obsidian desktop renderer.
+A narrow desktop capture is not a mobile device test.
 
-### Light mode
+![Light blueprint page](images/light-main-1280-preview.jpg)
+![Dark blueprint page](images/dark-main-1280-preview.jpg)
+![Callouts and table grid](images/light-preview-callouts-one.jpg)
+![Narrow reading page](images/dark-main-420-preview.jpg)
 
-![Engineering Notebook in light mode](./images/light.jpg)
+## Install
 
-### Dark mode
+1. Download `theme.css` and `manifest.json` from this repository.
+2. Open your vault folder.
+3. Create `.obsidian/themes/Engineering Notebook/` in that folder.
+4. Copy both files into `Engineering Notebook`.
+5. Open Settings in Obsidian.
+6. Open Appearance.
+7. Select **Engineering Notebook** in the theme list.
 
-![Engineering Notebook in dark mode](./images/dark.jpg)
+Keep the installed folder name equal to the manifest name.
+The repository folder name is a GitHub slug. Do not use it as the installed folder name.
 
-## Install the preview
+## Uninstall
 
-1. Download `theme.css` and `manifest.json` from the `1.0.1` release.
-2. Open your vault folder. Show hidden folders if necessary.
-3. Create `.obsidian/themes/Engineering Notebook/` inside the vault.
-4. Put both files in that folder. Keep their file names unchanged.
-5. Open Obsidian. Go to Settings, then Appearance.
-6. Select `Engineering Notebook` in the Themes list. Restart Obsidian if it is absent.
+1. Open Settings.
+2. Open Appearance.
+3. Select the default theme.
+4. Remove `.obsidian/themes/Engineering Notebook/` from your vault.
 
-You can also copy these two files from the repository.
-The manifest declares Obsidian 1.1.0 as the minimum version.
-The captures verify only the desktop version stated above.
+Your note files remain in the vault.
 
-## Remove the preview
+## Content styles
 
-Select the default theme in Settings, then Appearance.
-You can then remove the `Engineering Notebook` folder from `.obsidian/themes/`.
-Your note files remain in your vault.
+Headings H1 and H2 have ruled titles. H3 uses copper text.
+H4 to H6 use smaller text. H6 also uses italic text.
+Callouts use a stamped title, a type icon, and a copper edge.
+Nested lists use guide rules. Completed tasks use a checkmark and muted text.
+An unfinished nested task keeps its normal text color.
+Tables use full borders and tabular numbers.
+Code uses a plain panel. Inline code uses a small outlined label.
+Quotes and note embeds use a copper edge.
+Tags use square labels. Links have underlines.
+Unresolved links have dashed underlines.
+Horizontal rules divide note sections.
+
+## Compatibility
+
+The manifest keeps Obsidian 1.1.0 as the minimum version.
+The G4 evidence uses the Obsidian 1.14.4 desktop renderer.
+Reading view and Live Preview are tested in light and dark modes.
+Mobile is not tested.
+Community plugin layouts are not tested.
+
+## Customization
+
+Add a CSS snippet in your vault to change these variables:
+
+```css
+body {
+  --eng-grid-size: 32px;
+  --eng-radius: 4px;
+  --line-height-normal: 1.7;
+}
+.theme-light { --eng-grid: transparent; }
+.theme-dark { --eng-grid: transparent; }
+```
+
+Set `--eng-accent` and `--eng-accent-strong` in each mode to change the copper color.
+Set `--eng-rule` and `--eng-rule-strong` to change structural borders.
+Check contrast after you change a color.
+Style Settings is not required. This theme has no Style Settings panel.
+Fonts use the local system font stack. The theme does not load network assets.
 
 ## Known limits
 
-- Desktop captures use Obsidian 1.14.4. Real mobile device use has not been verified.
-- A narrow desktop capture does not prove mobile compatibility.
-- Full keyboard navigation and assistive technology checks remain incomplete.
-- Decorative separators can have low contrast. This theme has no accessibility certification.
-- Font rendering can change with your operating system and installed fonts.
-- Community plugins can change the layout. Their compatibility has not been verified.
+- Uppercase H1 to H3 titles suit short specification headings. Long titles can wrap.
+- The graph is decorative. Disable it with `--eng-grid: transparent` for a plain page.
+- Wide tables and long code lines use horizontal scrolling in narrow panes.
+- Callouts share a copper frame. The type icon and label identify their type.
+- Automated contrast and keyboard checks do not prove screen-reader compatibility.
+- The independent 95-point review is pending for this revision.
 
-## Feedback
+## License
 
-Open an issue with your Obsidian version, operating system, selected mode, and steps to reproduce the problem.
-Use a test note. Remove personal information from screenshots before you send them.
-
-## Credits and licence
-
-The original manifest credits U3 Theme Factory.
-NoteMods maintains this preview repository. The original CSS and copyright credits are preserved.
-Metadata and licence formatting were corrected for directory review. The MIT terms are unchanged.
-See [LICENSE](./LICENSE) for the MIT terms.
-
-[View the NoteMods catalog](https://notemods.com/themes/).
-
-## Original design description
-
-A blueprint-and-copper theme with graph-paper surfaces, ruled uppercase headings, and grid tables for engineering notes.
-
-## Source provenance
-
-Original CSS in this directory (theme.css) is original work authored for this project.
-
-## Version 1.0.1
-
-This update corrects repository metadata. The theme CSS is unchanged.
-The score above is historical. These current repository files have not received a new independent review.
-The 95/100 acceptance gate remains unmet.
+[MIT License](LICENSE). Original copyright: U3 Theme Factory, 2026.
+NoteMods maintains this theme.

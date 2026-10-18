@@ -4,7 +4,7 @@ Engineering Notebook gives specifications, measurements, and design records a bl
 Copper rules mark the headings. Square controls and full table grids keep the layout precise.
 The graph lines stay in the margins outside a solid note sheet.
 They are decoration. They do not carry information.
-The editor uses a visible caret. It has no frame around the writing surface.
+The editor uses a visible caret and an active-line rail.
 
 ## Screenshots
 

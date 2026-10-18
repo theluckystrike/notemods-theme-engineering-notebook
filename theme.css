@@ -765,17 +765,17 @@ body .setting-item.setting-item-heading { border-top: 0; }
 body .setting-group .setting-item:focus-visible {
   box-shadow: none; outline: 2px solid var(--eng-accent-strong); outline-offset: -2px;
 }
-body .search-result-file-matches,
-body .search-result-file-match { border-color: color-mix(in srgb, var(--eng-rule) 45%, var(--background-secondary)); }
+body .search-result-file-matches { border: 0; box-shadow: none; }
+body .search-result-file-match { border: 0; border-bottom: 1px solid color-mix(in srgb, var(--eng-rule) 40%, transparent); border-radius: 0; }
 body .cm-s-obsidian span.cm-hashtag { font-weight: 600; border: 1px solid var(--eng-rule-strong); }
 body .cm-s-obsidian span.cm-hashtag-begin { border-inline-end: 0; }
 body .cm-s-obsidian span.cm-hashtag-end { border-inline-start: 0; }
 body .markdown-source-view.mod-cm6 hr,
 body .markdown-source-view.mod-cm6 .hr hr { border: 0; border-top: 1px solid var(--eng-rule-strong); height: 0; opacity: 1; }
-body.theme-light .callout[data-callout="failure"] { --callout-color: 139, 89, 36; }
-body.theme-light .callout[data-callout="bug"] { --callout-color: 113, 70, 140; }
-body.theme-dark .callout[data-callout="failure"] { --callout-color: 240, 170, 110; }
-body.theme-dark .callout[data-callout="bug"] { --callout-color: 205, 160, 222; }
+body.theme-light .callout[data-callout="failure"] { --callout-color: 156, 69, 49; }
+body.theme-light .callout[data-callout="bug"] { --callout-color: 134, 61, 102; }
+body.theme-dark .callout[data-callout="failure"] { --callout-color: 238, 140, 110; }
+body.theme-dark .callout[data-callout="bug"] { --callout-color: 220, 150, 200; }
 
 /* Authored requirement stamps keep their identifier in the note. */
 body .callout[data-callout="spec"] {
@@ -793,10 +793,7 @@ body .callout[data-callout="spec"] .callout-title {
 body .callout[data-callout="spec"] :is(.callout-icon,.callout-icon .svg-icon) { color: var(--eng-bg); }
 body .callout[data-callout="spec"] table { font-variant-numeric: tabular-nums; }
 
-/* Authored indentation uses measured monospace spaces, including partial indents. */
-body .markdown-source-view.mod-cm6 .cm-hmd-list-indent {
-  font-family: var(--font-monospace-theme); font-size: 1em;
-}
+/* Native indentation retains the editor font metrics. */
 body .markdown-source-view.mod-cm6 .cm-indent-spacing {
   box-shadow: inset 1px 0 0 var(--eng-rule);
 }
@@ -807,4 +804,41 @@ body.theme-dark { --eng-on-accent: #1a1006; }
 body.theme-light > *, body.theme-dark > * {
   --text-on-accent: var(--eng-on-accent);
   --checkbox-marker-color: var(--eng-on-accent);
+}
+
+/* A focused writing line has a copper rail without a frame around the editor. */
+body .markdown-source-view.mod-cm6 .cm-focused .cm-active { box-shadow: -3px 0 0 var(--eng-accent-strong); }
+body .markdown-source-view.mod-cm6 .cm-content { caret-color: var(--caret-color); }
+body .search-result-file-matched-text { font-weight: 700; text-decoration-line: underline; }
+
+/* Use the native editor indent measurement without changing line fonts. */
+body .markdown-source-view.mod-cm6 { --list-indent: 2.25em; }
+
+/* Type edges retain a cue when neighbouring semantic hues look similar. */
+body .callout[data-callout="failure"] { border-inline-start-style: dashed; border-inline-start-width: 3px; }
+body .callout[data-callout="bug"] { border-inline-start-style: double; border-inline-start-width: 4px; }
+
+/* Tables share the note column width in Reading and Live Preview. */
+body .markdown-preview-view .table-wrapper,
+body .markdown-preview-view table,
+body .markdown-source-view.mod-cm6 .cm-embed-block.cm-table-widget,
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-editor,
+body .markdown-source-view.mod-cm6 .cm-table-widget .table-wrapper,
+body .markdown-source-view.mod-cm6 .cm-table-widget table { width: 100%; }
+
+/* The native cursor layer is outside the generic editor class in current Obsidian. */
+@media (prefers-reduced-motion: reduce) {
+  body .markdown-source-view.mod-cm6 .cm-scroller .cm-layer.cm-cursorLayer {
+    animation-name: none; animation-duration: 0s; animation-iteration-count: 1;
+  }
+}
+
+/* Native table padding and negative margins need an automatic outer width. */
+body .markdown-source-view.mod-cm6 .cm-embed-block.cm-table-widget { width: auto; }
+body .markdown-rendered table { width: 100%; }
+/* Widen authored spaces without changing the editor font metrics. */
+body .markdown-source-view.mod-cm6 .cm-hmd-list-indent { word-spacing: 0.25em; }
+body .extra-setting-button:focus { outline: 2px solid var(--eng-accent-strong); outline-offset: 2px; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  body .markdown-source-view.mod-cm6 .cm-scroller .cm-layer.cm-cursorLayer { animation-play-state: paused; }
 }

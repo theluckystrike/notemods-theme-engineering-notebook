@@ -7,7 +7,8 @@
     "Color-coded specification stamps with type icons and labels",
     "Full table grids, tabular numerals, and compact nested lists",
     "Square editor labels and control focus rings without an editor frame",
-    "An ink, copper, slate, and sage syntax palette"
+    "An ink, copper, slate, and sage syntax palette",
+    "Authored requirement stamps for stable identifiers, targets, and tolerances"
   ],
   "modes": [
     "light",

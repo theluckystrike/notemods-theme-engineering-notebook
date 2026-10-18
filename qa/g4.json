@@ -1,48 +1,142 @@
 {
   "schemaVersion": 1,
   "slug": "engineering-notebook",
-  "version": "1.0.2",
-  "producer": "T1",
+  "readiness": "HOLD",
   "independentAcceptance": "unknown",
-  "createdAt": "2026-10-18T04:03:14.382399+00:00",
+  "createdAt": "2026-10-18T05:15:28.382400+00:00",
   "hashes": {
-    "theme.css": "025b31f6ab80d1ee06d76b613883e21a620c3b9dce166c875963a7154830bcff",
+    "theme.css": "35962a0185d1a074da50eefb586b8a5674d661ffdd270cf584577eb06f4d2ee5",
     "manifest.json": "215b498a777065868617ae21534deffdb77367b4fc7ae5f249dce9c430bbf8f0",
-    "README.md": "d5dc6edb8f6360b60ee7f0895c420c281537bd13180015d91be27c678f5aa5db",
+    "README.md": "025db00993679776e6a03e119021e748f34a5e8dc500ee39bb9de0907c810db6",
     "LICENSE": "486636d97d793c8f648e4138e9fcd0841eae2561ba26786bd6d725e3624521ab",
-    "theme.json": "cb6742abe944d5cbc16413e2ed2a701bca109e4961962c45145faf2d1d5d9983",
-    "quality.json": "b45f653ddf4099c0898c72d62367aa248ae3e3e95740bab9906d42f8153dd595"
+    "theme.json": "1b18a21a32d5b471cbc7f989a044087ec01cec6934fd56ed0324675f63b51fc8",
+    "quality.json": "6dc1d9b97e7ed85365e57e4456b3c4b594f61e747ed7a6281162678c32d68ed3"
   },
-  "images": {
-    "dark-main-420-preview.jpg": "9b34555d5a65a0f3d60b88ba2b33a47f5132407c71cccc849871a90f0d6ba853",
-    "light-preview-callouts-one.jpg": "0be7b47b051b48e442599448986de8a25d10f807cc331489c5a3037b0f923854",
-    "dark-main-1280-preview.jpg": "e2c08fb6e8c4a8e44f302a60d1215f0bf1c9aa49785da40bf91dfd06647f8e5a",
-    "light-main-1280-preview.jpg": "3489858e787d0092c2fb3d5efbb68887694ec85ad60f171cfb8876f5c622d5e0"
+  "captures": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-r2-clean",
+  "reviewCopy": "/Users/mike/notemods-g4-work/evidence/engineering-notebook/35962a01-T1",
+  "rawEvidenceSha256": "95acc8deefd016906bfaab7773f16ea08bf1a469713b4425d3dc254dccc4d414",
+  "nativeMatrix": {
+    "status": "PASS",
+    "captures": 206,
+    "validation": {
+      "ok": true,
+      "checkedAt": "2026-10-18T05:13:11.192Z",
+      "failures": []
+    }
   },
-  "captures": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
-  "commands": [
+  "extraAssessment": {
+    "status": "FAIL",
+    "failures": [
+      "Attached renderer console warnings or errors"
+    ]
+  },
+  "console": [
     {
-      "command": "timeout 120 python3 units/T1/static-check.py engineering-notebook",
-      "exitCode": 0,
-      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/code-gate.json"
+      "at": "2026-10-18T05:11:10.216Z",
+      "source": "main",
+      "type": "warning",
+      "args": [
+        {
+          "type": "string",
+          "value": "Measure loop restarted more than 5 times"
+        }
+      ],
+      "executionContextId": 1,
+      "timestamp": 1792300270215.518,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 474290
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 477284
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 481076
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 2094009
+          },
+          {
+            "functionName": "r",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 545783
+          }
+        ]
+      }
     },
     {
-      "command": "timeout 60 python3 units/T1/package-check.py engineering-notebook",
-      "exitCode": 0,
-      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/package-gate.json"
-    },
-    {
-      "command": "timeout 900 node units/T1/harness/run.mjs --theme /Users/mike/notemods-theme-submissions-20261014/repos/notemods-theme-engineering-notebook --out /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
-      "exitCode": 0,
-      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2/evidence.json"
-    },
-    {
-      "command": "timeout 30 python3 units/T1/assess-evidence.py engineering-notebook /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
-      "exitCode": 0,
-      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/computed-evidence-summary.json"
+      "at": "2026-10-18T05:13:03.730Z",
+      "source": "main",
+      "type": "warning",
+      "args": [
+        {
+          "type": "string",
+          "value": "Measure loop restarted more than 5 times"
+        }
+      ],
+      "executionContextId": 1,
+      "timestamp": 1792300383730.421,
+      "stackTrace": {
+        "callFrames": [
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 474290
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 477284
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 481076
+          },
+          {
+            "functionName": "",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 2094009
+          },
+          {
+            "functionName": "r",
+            "scriptId": "143",
+            "url": "app://obsidian.md/app.js",
+            "lineNumber": 0,
+            "columnNumber": 545783
+          }
+        ]
+      }
     }
   ],
-  "computedContrast": {
+  "computedMeasurements": {
     "light": {
       "body": {
         "minimum": 12.899373713054969,
@@ -62,11 +156,11 @@
       },
       "tableBorders": {
         "minimum": 3.770438855319247,
-        "samples": 4
+        "samples": 10
       },
       "calloutText": {
         "minimum": 12.899373713054969,
-        "samples": 56
+        "samples": 51
       },
       "nativeTab": {
         "presses": 44,
@@ -74,7 +168,7 @@
         "indicatorsPresent": 44
       },
       "focusCoverage": {
-        "focusedControls": 46,
+        "focusedControls": 47,
         "minimum": 5.44102158642852,
         "states": [
           "reading",
@@ -86,7 +180,7 @@
         ]
       },
       "selectedSettingsText": {
-        "minimum": 5.5258959599077695,
+        "minimum": 10.03134145446507,
         "samples": 1
       },
       "themeSelection": {
@@ -154,7 +248,7 @@
                 "x": 304.5,
                 "y": 110.1875,
                 "width": 700,
-                "height": 4705.828125
+                "height": 4948.71875
               },
               "visible": true
             },
@@ -460,29 +554,258 @@
         "before": {
           "control": true,
           "value": "#975a21",
-          "background": "rgb(151, 90, 33)"
+          "background": "rgb(96, 57, 21)"
         },
         "chosen": "#315d7e",
-        "changed": "rgb(49, 92, 125)",
+        "changed": [
+          33,
+          62,
+          84,
+          1
+        ],
+        "samples": [
+          {
+            "chosen": "#315d7e",
+            "background": [
+              33,
+              62,
+              84,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(255, 255, 255)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "ratio": 11.159913331425582,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          },
+          {
+            "chosen": "#e0b070",
+            "background": [
+              96,
+              64,
+              21,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(255, 255, 255)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "ratio": 9.368533143471936,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          },
+          {
+            "chosen": "#ffff00",
+            "background": [
+              117,
+              117,
+              0,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(255, 255, 255)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "ratio": 4.882701868347519,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          },
+          {
+            "chosen": "#ffffff",
+            "background": [
+              59,
+              59,
+              59,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(255, 255, 255)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              255,
+              255,
+              255,
+              1
+            ],
+            "ratio": 11.201788790415135,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          }
+        ],
+        "minimum": 4.882701868347519,
         "reset": {
           "found": true,
           "class": "clickable-icon extra-setting-button"
         },
-        "restored": "rgb(151, 90, 33)",
+        "restored": "rgb(96, 57, 21)",
         "uiChanged": true,
         "restoredDefault": true
       },
       "calloutTitles": {
         "minimum": 4.960760737131485,
-        "samples": 68
+        "samples": 62
       },
       "commandSelection": {
-        "minimum": 5.5258959599077695,
+        "minimum": 10.03134145446507,
         "samples": 1
       },
       "codeSyntax": {
         "minimum": 4.982931348905061,
         "samples": 67
+      },
+      "narrowBlocks": {
+        "captures": 8,
+        "views": [
+          "preview",
+          "source"
+        ],
+        "sections": [
+          "callouts",
+          "code",
+          "embed",
+          "table"
+        ]
       }
     },
     "dark": {
@@ -504,11 +827,11 @@
       },
       "tableBorders": {
         "minimum": 4.248199284374335,
-        "samples": 4
+        "samples": 10
       },
       "calloutText": {
         "minimum": 12.139715594062585,
-        "samples": 56
+        "samples": 51
       },
       "nativeTab": {
         "presses": 44,
@@ -516,7 +839,7 @@
         "indicatorsPresent": 44
       },
       "focusCoverage": {
-        "focusedControls": 46,
+        "focusedControls": 47,
         "minimum": 6.650876248806014,
         "states": [
           "reading",
@@ -528,7 +851,7 @@
         ]
       },
       "selectedSettingsText": {
-        "minimum": 7.104395534785881,
+        "minimum": 10.842278715688897,
         "samples": 1
       },
       "themeSelection": {
@@ -596,7 +919,7 @@
                 "x": 304.5,
                 "y": 110.1875,
                 "width": 700,
-                "height": 4705.828125
+                "height": 4948.71875
               },
               "visible": true
             },
@@ -764,8 +1087,8 @@
               "children": 0,
               "paintedChildren": 0,
               "animationDuration": "1.2s",
-              "animationName": "cm-blink",
-              "inlineStyle": "z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"
+              "animationName": "cm-blink2",
+              "inlineStyle": "z-index: 150; animation-duration: 1200ms; animation-name: cm-blink2;"
             }
           ]
         },
@@ -902,37 +1225,208 @@
         "before": {
           "control": true,
           "value": "#d88f4f",
-          "background": "rgb(216, 143, 79)"
+          "background": "rgb(232, 189, 150)"
         },
         "chosen": "#98c2db",
-        "changed": "rgb(153, 195, 219)",
+        "changed": [
+          161,
+          199,
+          222,
+          1
+        ],
+        "samples": [
+          {
+            "chosen": "#98c2db",
+            "background": [
+              161,
+              199,
+              222,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(26, 16, 6)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              26,
+              16,
+              6,
+              1
+            ],
+            "ratio": 10.475504078096098,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          },
+          {
+            "chosen": "#000000",
+            "background": [
+              191,
+              191,
+              191,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(26, 16, 6)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              26,
+              16,
+              6,
+              1
+            ],
+            "ratio": 10.190266476346446,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          },
+          {
+            "chosen": "#0000ff",
+            "background": [
+              128,
+              128,
+              255,
+              1
+            ],
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "vertical-tab-nav-item tappable is-active",
+              "role": null,
+              "label": "Appearance",
+              "tabIndex": "-1",
+              "rect": {
+                "x": 12,
+                "y": 142.4921875,
+                "width": 185,
+                "height": 24.8984375
+              },
+              "visible": true
+            },
+            "property": "color",
+            "raw": "rgb(26, 16, 6)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              26,
+              16,
+              6,
+              1
+            ],
+            "ratio": 5.7550533261677606,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          }
+        ],
+        "minimum": 5.7550533261677606,
         "reset": {
           "found": true,
           "class": "clickable-icon extra-setting-button"
         },
-        "restored": "rgb(216, 143, 79)",
+        "restored": "rgb(232, 189, 150)",
         "uiChanged": true,
         "restoredDefault": true
       },
       "calloutTitles": {
         "minimum": 6.916297181093893,
-        "samples": 68
+        "samples": 62
       },
       "commandSelection": {
-        "minimum": 7.104395534785881,
+        "minimum": 10.842278715688897,
         "samples": 1
       },
       "codeSyntax": {
         "minimum": 7.599801420200975,
         "samples": 67
+      },
+      "narrowBlocks": {
+        "captures": 8,
+        "views": [
+          "preview",
+          "source"
+        ],
+        "sections": [
+          "callouts",
+          "code",
+          "embed",
+          "table"
+        ]
       }
     }
   },
-  "limits": [
-    "Startup before CDP attach is unknown.",
-    "Programmatic focus does not prove keyboard reachability.",
-    "Gradients and background image pixels are not sampled.",
-    "Mobile and assistive technology are not tested.",
-    "Main-process updater requests are outside CDP coverage."
-  ]
+  "note": "Code and package gates pass. The extra assessment fails. This artifact remains HOLD. Do not treat the complete native matrix as acceptance."
 }

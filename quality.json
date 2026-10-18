@@ -10,7 +10,7 @@
   "accepted": false,
   "directoryApprovalClaimed": false,
   "majorDefects": [],
-  "note": "This revision repairs G4 independent-review defects. A new independent review is required for its current hashes. No producer score is claimed.",
+  "note": "This revision repairs round 2 layout, chrome, and accent safety defects. Independent review of its current hashes is required.",
   "historicalReviewVersion": "1.0.0",
   "historicalScore": 77,
   "currentArtifactsIndependentlyReviewed": false

@@ -53,6 +53,18 @@ Tags use square labels. Links have underlines.
 Unresolved links have dashed underlines.
 Horizontal rules divide note sections.
 
+## Authored specification stamps
+
+Use a `spec` callout for a requirement, measurement, or acceptance record.
+Type the identifier in the title. The theme does not generate identifiers.
+
+```markdown
+> [!spec] REQ-014 / VERIFIED
+> Supply target: 5.0 V. Tolerance: 0.1 V.
+```
+
+The title uses an ink stamp. Tables inside the card keep tabular numbers.
+
 ## Compatibility
 
 The manifest keeps Obsidian 1.1.0 as the minimum version.
@@ -76,6 +88,9 @@ body {
 ```
 
 Use the Obsidian Accent color setting for selected settings rows, checked controls, and sliders.
+Light mode limits accent lightness to keep white labels readable.
+Dark mode raises accent lightness to keep dark labels readable.
+The selected hue remains visible.
 Set `--eng-accent` and `--eng-accent-strong` in each mode to change document rules and focus rings.
 Set `--eng-rule` and `--eng-rule-strong` to change structural borders.
 Check contrast after you change a color.
@@ -85,6 +100,7 @@ Fonts use the local system font stack. The theme does not load network assets.
 ## Known limits
 
 - Uppercase H1 to H3 titles suit short specification headings. Long titles can wrap.
+- Search-hit borders are decorative. File labels, spacing, and highlighted matches identify results.
 - The graph stays outside the body text. Disable it with `--eng-grid: transparent` for a plain page.
 - Wide tables and long code lines use horizontal scrolling in narrow panes.
 - Callout colors identify specification types. The icon and label also identify the type.

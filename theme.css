@@ -106,8 +106,8 @@ body {
 
   --interactive-normal: #1a3552;
   --interactive-hover: #22415f;
-  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 6%));
+  --interactive-accent: hsl(var(--accent-h), var(--accent-s), max(var(--accent-l), 75%));
+  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), max(calc(var(--accent-l) + 6%), 80%));
 
   --link-color: var(--eng-link);
   --link-color-hover: var(--eng-link-hover);
@@ -216,8 +216,8 @@ body {
 
   --interactive-normal: #e3ebf3;
   --interactive-hover: #d8e3ee;
-  --interactive-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
-  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 6%));
+  --interactive-accent: hsl(var(--accent-h), var(--accent-s), min(var(--accent-l), 23%));
+  --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), min(calc(var(--accent-l) - 6%), 20%));
 
   --link-color: var(--eng-link);
   --link-color-hover: var(--eng-link-hover);
@@ -593,7 +593,7 @@ body .markdown-rendered .task-list-item.is-checked > :is(ul, ol) {
 }
 
 /* R1: focus belongs to controls. The editor uses its caret. */
-body { --caret-color: var(--eng-accent-strong); --list-indent: 1.4em; }
+body { --caret-color: var(--eng-accent-strong); --eng-list-indent: 1.4em; }
 body .markdown-source-view .cm-content:focus-visible,
 body .cm-editor.cm-focused { outline: none; box-shadow: none; }
 body .markdown-source-view .cm-cursor { border-left: 2px solid var(--caret-color); }
@@ -702,7 +702,7 @@ body.theme-dark .callout[data-callout="cite"] { --callout-color: 177, 183, 193; 
 /* Keep nested list increments close to the editor's guide width. */
 body .markdown-rendered :is(ul, ol) :is(ul, ol) {
   margin-inline-start: 0;
-  padding-inline-start: var(--list-indent);
+  padding-inline-start: var(--eng-list-indent);
 }
 /* The disabled icon stays dim. Its focus ring has full opacity. */
 body :is(.clickable-icon.is-disabled, [aria-disabled="true"]):focus-visible { opacity: 1; }
@@ -754,4 +754,57 @@ body .markdown-embed .markdown-preview-view,
 body .markdown-embed-content.markdown-preview-view {
   background-image: none;
   background-color: transparent;
+}
+
+/* Round 2: a legible editor hierarchy, with one focus edge per setting. */
+body .markdown-reading-view .markdown-rendered :is(ul,ol) > li > :is(ul,ol) {
+  margin-inline-start: 0;
+  padding-inline-start: var(--eng-list-indent);
+}
+body .setting-item.setting-item-heading { border-top: 0; }
+body .setting-group .setting-item:focus-visible {
+  box-shadow: none; outline: 2px solid var(--eng-accent-strong); outline-offset: -2px;
+}
+body .search-result-file-matches,
+body .search-result-file-match { border-color: color-mix(in srgb, var(--eng-rule) 45%, var(--background-secondary)); }
+body .cm-s-obsidian span.cm-hashtag { font-weight: 600; border: 1px solid var(--eng-rule-strong); }
+body .cm-s-obsidian span.cm-hashtag-begin { border-inline-end: 0; }
+body .cm-s-obsidian span.cm-hashtag-end { border-inline-start: 0; }
+body .markdown-source-view.mod-cm6 hr,
+body .markdown-source-view.mod-cm6 .hr hr { border: 0; border-top: 1px solid var(--eng-rule-strong); height: 0; opacity: 1; }
+body.theme-light .callout[data-callout="failure"] { --callout-color: 139, 89, 36; }
+body.theme-light .callout[data-callout="bug"] { --callout-color: 113, 70, 140; }
+body.theme-dark .callout[data-callout="failure"] { --callout-color: 240, 170, 110; }
+body.theme-dark .callout[data-callout="bug"] { --callout-color: 205, 160, 222; }
+
+/* Authored requirement stamps keep their identifier in the note. */
+body .callout[data-callout="spec"] {
+  --callout-icon: ruler;
+  border: 2px solid var(--eng-accent-strong);
+  border-radius: var(--eng-radius);
+}
+body .callout[data-callout="spec"] .callout-title {
+  font-family: var(--font-monospace-theme);
+  font-variant-numeric: tabular-nums;
+  background: var(--eng-ink); color: var(--eng-bg);
+  width: fit-content; max-width: 100%;
+  margin: 0 0 0.65em; padding: 0.35em 0.65em;
+}
+body .callout[data-callout="spec"] :is(.callout-icon,.callout-icon .svg-icon) { color: var(--eng-bg); }
+body .callout[data-callout="spec"] table { font-variant-numeric: tabular-nums; }
+
+/* Authored indentation uses measured monospace spaces, including partial indents. */
+body .markdown-source-view.mod-cm6 .cm-hmd-list-indent {
+  font-family: var(--font-monospace-theme); font-size: 1em;
+}
+body .markdown-source-view.mod-cm6 .cm-indent-spacing {
+  box-shadow: inset 1px 0 0 var(--eng-rule);
+}
+
+/* Native accent classes can override body tokens. Resolve bounded control labels in the app root. */
+body.theme-light { --eng-on-accent: #ffffff; }
+body.theme-dark { --eng-on-accent: #1a1006; }
+body.theme-light > *, body.theme-dark > * {
+  --text-on-accent: var(--eng-on-accent);
+  --checkbox-marker-color: var(--eng-on-accent);
 }

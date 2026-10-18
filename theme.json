@@ -3,13 +3,21 @@
   "family": "technical",
   "useCase": "Specifications, measurements, and design records",
   "distinctFeatures": [
-    "Faint blueprint graph paper with copper ruled titles",
-    "Square stamped callouts and full table grids",
-    "Tabular numerals and nested list guide rules",
-    "Copper focus rings with a paper-colored gap"
+    "Blueprint graph margins around a solid note sheet with copper ruled titles",
+    "Color-coded specification stamps with type icons and labels",
+    "Full table grids, tabular numerals, and compact nested lists",
+    "Square editor labels and control focus rings without an editor frame",
+    "An ink, copper, slate, and sage syntax palette"
   ],
-  "modes": ["light", "dark"],
-  "fonts": {"text": "system sans", "interface": "system sans", "monospace": "system monospace"},
+  "modes": [
+    "light",
+    "dark"
+  ],
+  "fonts": {
+    "text": "system sans",
+    "interface": "system sans",
+    "monospace": "system monospace"
+  },
   "contrastTokens": {
     "normalText": "--text-normal on --background-primary",
     "link": "--link-color on --background-primary",

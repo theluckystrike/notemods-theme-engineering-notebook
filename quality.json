@@ -10,7 +10,7 @@
   "accepted": false,
   "directoryApprovalClaimed": false,
   "majorDefects": [],
-  "note": "Version 1.0.2 requires an independent review of the current source hashes and G4 captures. The historical review scored source 1.0.0 at 77. No current score is claimed.",
+  "note": "This revision repairs G4 independent-review defects. A new independent review is required for its current hashes. No producer score is claimed.",
   "historicalReviewVersion": "1.0.0",
   "historicalScore": 77,
   "currentArtifactsIndependentlyReviewed": false

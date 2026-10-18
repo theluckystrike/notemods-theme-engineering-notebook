@@ -4,22 +4,22 @@
   "version": "1.0.2",
   "producer": "T1",
   "independentAcceptance": "unknown",
-  "createdAt": "2026-10-18T02:05:39.188909+00:00",
+  "createdAt": "2026-10-18T04:03:14.382399+00:00",
   "hashes": {
-    "theme.css": "6724068a9161004967c048769256c26c6a4f892bab8097201d1ca0e08b1efad1",
+    "theme.css": "025b31f6ab80d1ee06d76b613883e21a620c3b9dce166c875963a7154830bcff",
     "manifest.json": "215b498a777065868617ae21534deffdb77367b4fc7ae5f249dce9c430bbf8f0",
-    "README.md": "92a5eef521f8ae6093944e28c2bfacc9f7cd32a4ee53002e5f5f8cff1305983f",
+    "README.md": "d5dc6edb8f6360b60ee7f0895c420c281537bd13180015d91be27c678f5aa5db",
     "LICENSE": "486636d97d793c8f648e4138e9fcd0841eae2561ba26786bd6d725e3624521ab",
-    "theme.json": "78912b8ce8b0790060ea25e062d919879da140b8f502f1dddf087e1f83a3e108",
-    "quality.json": "ae6e81da09d7f3c08375496452076c6758a866655569b931b7f48ff63840346d"
+    "theme.json": "cb6742abe944d5cbc16413e2ed2a701bca109e4961962c45145faf2d1d5d9983",
+    "quality.json": "b45f653ddf4099c0898c72d62367aa248ae3e3e95740bab9906d42f8153dd595"
   },
   "images": {
-    "dark-main-420-preview.jpg": "9ef7a97914e40a46bfba6e9272df8cac9046c82998adb11bfc3bfd73fe93517f",
-    "light-preview-callouts-one.jpg": "3a5af4ee8b361e11aed24469157b172cf182161823d0962fe554aeedc4305f78",
-    "dark-main-1280-preview.jpg": "5514b53934b5c0537b279d980e7e8fbe6ecee5c2d36ff954ac48dea03cdb609d",
-    "light-main-1280-preview.jpg": "69a59809f34c87d048cbe6e07cebdd985f0ce60b4d265261a414fbd9aa1119b7"
+    "dark-main-420-preview.jpg": "9b34555d5a65a0f3d60b88ba2b33a47f5132407c71cccc849871a90f0d6ba853",
+    "light-preview-callouts-one.jpg": "0be7b47b051b48e442599448986de8a25d10f807cc331489c5a3037b0f923854",
+    "dark-main-1280-preview.jpg": "e2c08fb6e8c4a8e44f302a60d1215f0bf1c9aa49785da40bf91dfd06647f8e5a",
+    "light-main-1280-preview.jpg": "3489858e787d0092c2fb3d5efbb68887694ec85ad60f171cfb8876f5c622d5e0"
   },
-  "captures": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+  "captures": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
   "commands": [
     {
       "command": "timeout 120 python3 units/T1/static-check.py engineering-notebook",
@@ -32,12 +32,12 @@
       "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/package-gate.json"
     },
     {
-      "command": "timeout 900 node units/T1/harness/run.mjs --theme /Users/mike/notemods-theme-submissions-20261014/repos/notemods-theme-engineering-notebook --out /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+      "command": "timeout 900 node units/T1/harness/run.mjs --theme /Users/mike/notemods-theme-submissions-20261014/repos/notemods-theme-engineering-notebook --out /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
       "exitCode": 0,
-      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release/evidence.json"
+      "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2/evidence.json"
     },
     {
-      "command": "timeout 30 python3 units/T1/assess-evidence.py engineering-notebook /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-release",
+      "command": "timeout 30 python3 units/T1/assess-evidence.py engineering-notebook /Users/mike/notemods-g4-work/units/T1/engineering-notebook/captures-a2",
       "exitCode": 0,
       "evidence": "/Users/mike/notemods-g4-work/units/T1/engineering-notebook/computed-evidence-summary.json"
     }
@@ -45,12 +45,12 @@
   "computedContrast": {
     "light": {
       "body": {
-        "minimum": 5.673429346238581,
-        "samples": 21
+        "minimum": 12.899373713054969,
+        "samples": 14
       },
       "muted": {
         "minimum": 5.897544994213619,
-        "samples": 22
+        "samples": 24
       },
       "links": {
         "minimum": 5.785031911940014,
@@ -66,26 +66,27 @@
       },
       "calloutText": {
         "minimum": 12.899373713054969,
-        "samples": 50
+        "samples": 56
       },
       "nativeTab": {
         "presses": 44,
-        "distinctElements": 26,
+        "distinctElements": 27,
         "indicatorsPresent": 44
       },
       "focusCoverage": {
-        "focusedControls": 39,
-        "minimum": 4.478488961088457,
+        "focusedControls": 46,
+        "minimum": 5.44102158642852,
         "states": [
           "reading",
           "search",
           "explorer",
           "palette",
+          "editor",
           "settings"
         ]
       },
       "selectedSettingsText": {
-        "minimum": 5.44102158642852,
+        "minimum": 5.5258959599077695,
         "samples": 1
       },
       "themeSelection": {
@@ -122,16 +123,376 @@
             "selectedTheme": "Engineering Notebook"
           }
         }
+      },
+      "editorCaret": {
+        "minimum": 6.491647347463945,
+        "samples": 1,
+        "details": {
+          "kind": "native caret",
+          "focused": true,
+          "documentFocused": true,
+          "visible": true,
+          "editorOutline": "none",
+          "contentOutline": "none",
+          "borderWidth": "native",
+          "selectionRect": {
+            "x": 304.5,
+            "y": 190.6953125,
+            "width": 0,
+            "height": 19
+          },
+          "sample": {
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "cm-content cm-lineWrapping",
+              "role": "textbox",
+              "label": "Theme Evidence Fixture v4G4-FIXTURE-V4 proves that this note is open. Body text with bold,",
+              "tabIndex": null,
+              "rect": {
+                "x": 304.5,
+                "y": 110.1875,
+                "width": 700,
+                "height": 4705.828125
+              },
+              "visible": true
+            },
+            "property": "caretColor",
+            "raw": "rgb(127, 74, 27)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              127,
+              74,
+              27,
+              1
+            ],
+            "background": [
+              238,
+              243,
+              248,
+              1
+            ],
+            "ratio": 6.491647347463945,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          }
+        }
+      },
+      "reducedMotion": {
+        "main": {
+          "mode": "light",
+          "reduced": true,
+          "scope": "Rendered controls, including controls outside the scroll viewport. Empty zero-area cursor layers are recorded separately.",
+          "samples": [
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SPAN",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SPAN",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon view-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon view-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            }
+          ],
+          "unpaintedLayers": [
+            {
+              "class": "cm-layer cm-layer-above cm-cursorLayer",
+              "width": 0,
+              "height": 0,
+              "children": 0,
+              "paintedChildren": 0,
+              "animationDuration": "1.2s",
+              "animationName": "cm-blink",
+              "inlineStyle": "z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"
+            }
+          ]
+        },
+        "settings": {
+          "mode": "light",
+          "reduced": true,
+          "scope": "Rendered controls, including controls outside the scroll viewport. Empty zero-area cursor layers are recorded separately.",
+          "samples": [
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SELECT",
+              "class": "dropdown",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SELECT",
+              "class": "dropdown",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "slider",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": "::after",
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": "::after",
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            }
+          ],
+          "unpaintedLayers": []
+        }
+      },
+      "accentCustomization": {
+        "method": "Visible Accent color input events and its reset control",
+        "before": {
+          "control": true,
+          "value": "#975a21",
+          "background": "rgb(151, 90, 33)"
+        },
+        "chosen": "#315d7e",
+        "changed": "rgb(49, 92, 125)",
+        "reset": {
+          "found": true,
+          "class": "clickable-icon extra-setting-button"
+        },
+        "restored": "rgb(151, 90, 33)",
+        "uiChanged": true,
+        "restoredDefault": true
+      },
+      "calloutTitles": {
+        "minimum": 4.960760737131485,
+        "samples": 68
+      },
+      "commandSelection": {
+        "minimum": 5.5258959599077695,
+        "samples": 1
+      },
+      "codeSyntax": {
+        "minimum": 4.982931348905061,
+        "samples": 67
       }
     },
     "dark": {
       "body": {
-        "minimum": 6.602264445069483,
-        "samples": 21
+        "minimum": 12.139715594062585,
+        "samples": 14
       },
       "muted": {
         "minimum": 7.249331073310864,
-        "samples": 22
+        "samples": 24
       },
       "links": {
         "minimum": 7.855630622818158,
@@ -147,26 +508,27 @@
       },
       "calloutText": {
         "minimum": 12.139715594062585,
-        "samples": 50
+        "samples": 56
       },
       "nativeTab": {
         "presses": 44,
-        "distinctElements": 26,
+        "distinctElements": 27,
         "indicatorsPresent": 44
       },
       "focusCoverage": {
-        "focusedControls": 39,
-        "minimum": 5.8491074343690315,
+        "focusedControls": 46,
+        "minimum": 6.650876248806014,
         "states": [
           "reading",
           "search",
           "explorer",
           "palette",
+          "editor",
           "settings"
         ]
       },
       "selectedSettingsText": {
-        "minimum": 6.867102471710059,
+        "minimum": 7.104395534785881,
         "samples": 1
       },
       "themeSelection": {
@@ -203,6 +565,366 @@
             "selectedTheme": "Engineering Notebook"
           }
         }
+      },
+      "editorCaret": {
+        "minimum": 7.302707163028097,
+        "samples": 1,
+        "details": {
+          "kind": "native caret",
+          "focused": true,
+          "documentFocused": true,
+          "visible": true,
+          "editorOutline": "none",
+          "contentOutline": "none",
+          "borderWidth": "native",
+          "selectionRect": {
+            "x": 304.5,
+            "y": 190.6953125,
+            "width": 0,
+            "height": 19
+          },
+          "sample": {
+            "measured": true,
+            "element": {
+              "tag": "DIV",
+              "id": "",
+              "class": "cm-content cm-lineWrapping",
+              "role": "textbox",
+              "label": "Theme Evidence Fixture v4G4-FIXTURE-V4 proves that this note is open. Body text with bold,",
+              "tabIndex": null,
+              "rect": {
+                "x": 304.5,
+                "y": 110.1875,
+                "width": 700,
+                "height": 4705.828125
+              },
+              "visible": true
+            },
+            "property": "caretColor",
+            "raw": "rgb(224, 151, 92)",
+            "cssOpacity": "1",
+            "ancestorOpacity": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "foreground": [
+              224,
+              151,
+              92,
+              1
+            ],
+            "background": [
+              12,
+              26,
+              43,
+              1
+            ],
+            "ratio": 7.302707163028097,
+            "method": "sRGB relative luminance; CSS alpha, ancestor backgrounds, and group opacity are composited; gradients and background images are not sampled",
+            "backgroundImage": "none",
+            "borderTopWidth": "0px",
+            "borderBottomWidth": "0px",
+            "borderTopStyle": "none",
+            "borderBottomStyle": "none"
+          }
+        }
+      },
+      "reducedMotion": {
+        "main": {
+          "mode": "dark",
+          "reduced": true,
+          "scope": "Rendered controls, including controls outside the scroll viewport. Empty zero-area cursor layers are recorded separately.",
+          "samples": [
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon side-dock-ribbon-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SPAN",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SPAN",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon view-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "clickable-icon view-action",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            }
+          ],
+          "unpaintedLayers": [
+            {
+              "class": "cm-layer cm-layer-above cm-cursorLayer",
+              "width": 0,
+              "height": 0,
+              "children": 0,
+              "paintedChildren": 0,
+              "animationDuration": "1.2s",
+              "animationName": "cm-blink",
+              "inlineStyle": "z-index: 150; animation-duration: 1200ms; animation-name: cm-blink;"
+            }
+          ]
+        },
+        "settings": {
+          "mode": "dark",
+          "reduced": true,
+          "scope": "Rendered controls, including controls outside the scroll viewport. Empty zero-area cursor layers are recorded separately.",
+          "samples": [
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SELECT",
+              "class": "dropdown",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "SELECT",
+              "class": "dropdown",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "DIV",
+              "class": "clickable-icon extra-setting-button",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "slider",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": "::after",
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "BUTTON",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "LABEL",
+              "class": "checkbox-container",
+              "pseudo": "::after",
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            },
+            {
+              "tag": "INPUT",
+              "class": "",
+              "pseudo": null,
+              "transitionDuration": "0s",
+              "animationDuration": "0s"
+            }
+          ],
+          "unpaintedLayers": []
+        }
+      },
+      "accentCustomization": {
+        "method": "Visible Accent color input events and its reset control",
+        "before": {
+          "control": true,
+          "value": "#d88f4f",
+          "background": "rgb(216, 143, 79)"
+        },
+        "chosen": "#98c2db",
+        "changed": "rgb(153, 195, 219)",
+        "reset": {
+          "found": true,
+          "class": "clickable-icon extra-setting-button"
+        },
+        "restored": "rgb(216, 143, 79)",
+        "uiChanged": true,
+        "restoredDefault": true
+      },
+      "calloutTitles": {
+        "minimum": 6.916297181093893,
+        "samples": 68
+      },
+      "commandSelection": {
+        "minimum": 7.104395534785881,
+        "samples": 1
+      },
+      "codeSyntax": {
+        "minimum": 7.599801420200975,
+        "samples": 67
       }
     }
   },
@@ -210,6 +932,7 @@
     "Startup before CDP attach is unknown.",
     "Programmatic focus does not prove keyboard reachability.",
     "Gradients and background image pixels are not sampled.",
-    "Mobile and assistive technology are not tested."
+    "Mobile and assistive technology are not tested.",
+    "Main-process updater requests are outside CDP coverage."
   ]
 }
